@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.header{
+    position: fixed;
+    height: 13vh;
+    background-color: #150120;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header img{
+    height: 90px;
+    padding-left: 10px;
+}
+.logoheader{
+    position: absolute;
+    left: 50px;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.navbar div{
+    height: 70px;   
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar div a{
+    font-size: 1.8em;
+    text-decoration: underline;
+    color: #fff;
+}
+.navbar div a:hover{
+    color: #c641ff;
+}
+main{
+    height: auto;
+}
+#home-container{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(256, 256, 256);
+    background-image: url(../img/fundo-inicio.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home-container .title-inicio{
+    font-size: 1.8em;
+    color: #fff;
+    
+}
+#home-container article{
+    font-size: 1.8em;
+    color: #fff;
+    
+}
+#pokedex-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #dc8bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#pokedex-container h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-decoration: underline;
+    color: #fff;
+    height: 20vh;
+}
+#pokedex-container .cards{
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#pokedex-container .cards div{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: auto;
+    background-color: #150120;
+}
+#pokedex-container .cards img{
+    width: 120px;
+    height: 150px;
+}
+#pokedex-container .card{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+#pokedex-cantainer .card-img{
+
+}
+#pokedex-cantainer .card-status{
+
+}
+#pokedex-cantainer .card-atkdff{
+    
+}
+.footer{
+    height: 10vh;
+    background-color: aqua;
+    width: 100%;
+}
