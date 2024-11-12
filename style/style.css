@@ -68,7 +68,8 @@ main{
     height: 100vh;
     background-color: #dc8bff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
 }
