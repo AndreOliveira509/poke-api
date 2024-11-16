@@ -89,6 +89,11 @@ main{
 }
 #pokedex-container a{
     text-decoration: none;
+    transition: transform 0.5s ease;
+} 
+#pokedex-container a:hover{
+    transform: scale(1.1);
+
 } 
 
 .cards{
@@ -120,6 +125,7 @@ main{
     align-items: start;
     
 }
+
 .card-status{
     width: 100%;
     height: 300px;
@@ -135,8 +141,13 @@ main{
     justify-content: center;
 }
 .card-atkdff{
+    font-size: 0.8em;
     display: flex;
-    gap: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15%;
+    flex-wrap: wrap;    
 }
 
 

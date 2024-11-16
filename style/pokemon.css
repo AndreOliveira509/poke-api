@@ -47,10 +47,11 @@ html{
 main{
     width: 100%;
 }
-#pokemon-container{
+#poke-container{
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: row;
 }
 .poke-imgside {
     width: 50%;
@@ -70,4 +71,16 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 5%;
+}
+.poke-statusside h2{
+    font-size: 2.2em;
+
+}
+.poke-statusside p{
+    width: 800px;
+    font-size: 1.8em;
+
+    text-align: justify;
 }
