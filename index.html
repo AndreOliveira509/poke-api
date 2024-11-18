@@ -42,12 +42,23 @@
                 <button id="pokedex-btn">Mostrar mais</button>
             </div>
         </section>
-        <section id="quiz-container">
-             <h1>Quiz</h1>
-             <div id="pergunta">
-                <input type="button" value="Gerar pergunta">
-             </div>
-        </section>
+        <section id="compare-container">
+            <h1>Compare Pokémon</h1>
+            <form id="compare-form">
+                <div class="compare-inputs">
+                    <input type="text" id="pokemon1" placeholder="Digite o nome ou ID do Pokémon 1"><br><h1>x</h1><br>
+<input type="text" id="pokemon2" placeholder="Digite o nome ou ID do Pokémon 2">
+<button id="compare-btn" onclick="comparePokemons()">Comparar</button>
+
+<div id="compare-results"></div>
+
+                </div>
+                
+            </form>
+            <div id="compare-results">
+                <!-- Os cards de comparação aparecerão aqui -->
+            </div>
+        </section>        
     </main>
 
     <div class="footer"></div>
