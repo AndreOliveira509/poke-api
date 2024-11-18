@@ -33,35 +33,41 @@ async function displayPokemonList(pokemonList) {
     }
 }
 
-// Função para buscar um Pokémon específico
-async function fetchPokemon() {
-    const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Pokémon não encontrado.');
+    // Função para buscar um Pokémon específico
+    async function fetchPokemon() {
+        const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
+    
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Pokémon não encontrado.');
+            }
+            const pokemon = await response.json();
+    
+            // Limpa os cards existentes antes de exibir o Pokémon pesquisado
+            const cardsContainer = document.querySelector('.cards');
+            cardsContainer.innerHTML = '';
+    
+            // Redefine o tamanho do fundo ao valor original
+            const fundosize = document.getElementById("pokedex-container");
+            fundosize.style.height = '100vh';  // Ou defina o valor original que você quer (ex: '100vh')
+    
+            addPokemonCard(pokemon); // Exibe o Pokémon pesquisado
+        } catch (error) {
+            displayError(error.message);
         }
-        const pokemon = await response.json();
-        addPokemonCard(pokemon, true); // Apaga os Pokémon anteriores e exibe o buscado
-    } catch (error) {
-        displayError(error.message);
     }
-}
+
 
 // Função para adicionar um card de Pokémon
-function addPokemonCard(pokemon, clearExisting = false) {
+// Função para adicionar um card de Pokémon
+function addPokemonCard(pokemon) {
     const cardsContainer = document.querySelector('.cards');
 
-    // Limpa os cartões antigos apenas se for uma pesquisa
-    if (clearExisting) {
-        cardsContainer.innerHTML = '';
-    }
-
-    // Cria o elemento do card
+    // Cria a nova div para o Pokémon
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card'); // Adiciona a classe básica do card
 
     card.innerHTML = `
         <div class="card-img">
@@ -79,8 +85,15 @@ function addPokemonCard(pokemon, clearExisting = false) {
         </div>
     `;
 
+    // Adiciona o card ao container
     cardsContainer.appendChild(card);
+
+    // Adiciona a classe "visible" após um pequeno atraso para ativar a animação
+    setTimeout(() => {
+        card.classList.add('visible');
+    }, 100); // Delay em milissegundos para ativar a transição
 }
+
 
 // Função para exibir mensagens de erro
 function displayError(message) {

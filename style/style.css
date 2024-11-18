@@ -87,6 +87,7 @@ main{
     color: #150120;
     height: 20vh;
 }
+
 .poke-search{
     width: 80vw;
     height: 8vh;
@@ -99,16 +100,12 @@ main{
     height: 3vh;
 }
 .poke-search-lupa{
-    width: 30px;
+    width: 40px;
     cursor: pointer;
-}
-#pokedex-container a{
-    text-decoration: none;
     transition: transform 0.5s ease;
-} 
-#pokedex-container a:hover{
-    transform: scale(1.1);
-
+}
+.poke-search-lupa:hover{
+    transform: scale(1.4);
 } 
 .cards{
     width: 90vw;
@@ -130,15 +127,25 @@ main{
     width: 120px;
     height: 150px;
 }
+
 .card{
     font-size: 1.5em;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    
+    align-items: start;    
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
 }
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card:hover {
+    transform: scale(1.1);
+}
+
 
 .card-status{
     width: 100%;
@@ -173,10 +180,10 @@ main{
     background: none;
     font-size: 1.8em;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
-
+    margin-bottom: 20px;       
 }
 
 
