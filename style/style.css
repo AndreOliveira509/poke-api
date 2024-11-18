@@ -69,7 +69,7 @@ main{
 }
 #pokedex-container{
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     background-color: #dc8bff;
     display: flex;
     flex-direction: column;
@@ -150,7 +150,20 @@ main{
     flex-wrap: wrap;    
 }
 
+#pokedex-btn{
+    border: none;
+    width: 20vw;
+    height: 5vh;
+    text-decoration: underline;
+    color: #150120;
+    background: none;
+    font-size: 1.8em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
 
+}
 
 
 
