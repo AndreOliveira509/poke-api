@@ -31,16 +31,15 @@
         </section>
         <section id="pokedex-container">
             <h1>Pokedex</h1>
-            <div class="in ">
+            <div class="poke-search">
                 <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
-                <button onclick="fetchPokemon()">Buscar</button>
+                <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
             </div>
             <section class="cards">
-                <!-- Os Pokémon serão gerados dinamicamente aqui -->
+                <!-- Pokémon serão carregados automaticamente aqui -->
             </section>
-        </section>        
             <div>
-                <input type="button" value="Mostrar mais" id="pokedex-btn">
+                <button id="pokedex-btn">Mostrar mais</button>
             </div>
         </section>
         <section id="quiz-container">

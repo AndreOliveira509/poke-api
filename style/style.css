@@ -87,6 +87,21 @@ main{
     color: #150120;
     height: 20vh;
 }
+.poke-search{
+    width: 80vw;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    gap: 1%;
+}
+.poke-search input{
+    width: 15vw;
+    height: 3vh;
+}
+.poke-search-lupa{
+    width: 30px;
+    cursor: pointer;
+}
 #pokedex-container a{
     text-decoration: none;
     transition: transform 0.5s ease;
@@ -95,7 +110,6 @@ main{
     transform: scale(1.1);
 
 } 
-
 .cards{
     width: 90vw;
     height: 100vh;
