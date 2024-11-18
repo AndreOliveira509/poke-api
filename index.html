@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pokeword</title>
     <link rel="stylesheet" href="style/style.css">
+    
+    <script src="script/pokedex.js"></script>    
+    
 </head>
 <body>
     <header class="header">
@@ -27,183 +30,15 @@
             </article>
         </section>
         <section id="pokedex-container">
-            <h1>
-                Pokedex
-            </h1>
-            <!-- CARDS É A DIV PAI DE CADA CARD-->
+            <h1>Pokedex</h1>
+            <div>
+                <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
+                <button onclick="fetchPokemon()">Buscar</button>
+            </div>
             <section class="cards">
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- APAGA O RESTO E GERAR PELO JS -->
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="pages/pokemon.html">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="img/pokemodelo.png">
-                        </div>
-                        <div class="card-status">
-                            <h2>Pikachu</h2>
-                            <p>Tipo: Eletrico</p>
-                            <div class="card-atkdff">
-                                <p>Ataque: 99</p>
-                                <p>Defesa: 66</p>
-                                <p>HP: 99</p>
-                                <p>Velocidade: 66</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>    
+                <!-- Os Pokémon serão gerados dinamicamente aqui -->
             </section>
+        </section>        
             <div>
                 <input type="button" value="Mostrar mais" id="pokedex-btn">
             </div>
