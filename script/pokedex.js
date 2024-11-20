@@ -200,7 +200,7 @@ function displayComparison(pokemon1, pokemon2) {
         return `
             <div class="compare-card">
                 <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+                <div class="img-compare"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
                 <p>Tipo(s): ${pokemon.types.map(type => type.type.name).join(', ')}</p>
                 <p>Fraquezas: ${weaknesses.length > 0 ? weaknesses.join(', ') : 'Nenhuma fraqueza detectada'}</p>
                 ${createBar(stats.attack, stats.attack, 'Ataque')}

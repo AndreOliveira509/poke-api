@@ -46,15 +46,18 @@
             <h1>Compare Pokémon</h1>
             <form id="compare-form">
                 <div class="compare-inputs">
-                        <input type="text" id="pokemon1" placeholder="Digite o nome ou ID do Pokémon 1">
-                        <input type="text" id="pokemon2" placeholder="Digite o nome ou ID do Pokémon 2">
-                        <button id="compare-btn" onclick="comparePokemons()">Comparar</button>
-                    <div id="compare-results"></div>
+                        <div class="two-compare-inputs">
+                            <input type="text" id="pokemon1" placeholder="Nome ou ID do Pokémon 1">
+                            <input type="text" id="pokemon2" placeholder="Nome ou ID do Pokémon 2">
+                        </div>
+                        <div class="compare-inputs-btn">
+                            <button id="compare-btn" onclick="comparePokemons()">Comparar</button>
+                        </div>
                 </div>
-                
             </form>
-            <div id="compare-results">
-                <!-- Os cards de comparação aparecerão aqui -->
+            <div class="res-compare">
+                <div id="compare-results"></div>
+                <div id="compare-results"></div>
             </div>
         </section>        
     </main>
