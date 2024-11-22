@@ -200,6 +200,91 @@ main{
     text-decoration: underline;
     font-size: 2em ;
 }
+
+
+#compare-container {
+    width: 100%;
+    height: 70vh;
+    background-color: #3b3c3d;
+    text-align: center;
+}
+
+#compare-container h1 {
+    font-size: 2em;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+#compare-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.compare-inputs {
+    display: flex;
+    align-items: center;
+    padding-right: 200px;
+    gap: 1rem;
+}
+
+.compare-inputs input {
+    width: 200px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 12px; 
+    border: #ffffff solid 2px;
+}
+
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e4e4e4;
+}
+
+#compare-results {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.compare-card {
+    background-color:#1C0F20;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.compare-card img {
+    width: 200px;
+    height: 200px;
+}
+
+.compare-bar {
+    height: 10px;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    background-color: #ddd; /* Background para barras não preenchidas */
+    overflow: hidden;
+    position: relative;
+}
+
+.compare-bar div {
+    height: 100%;
+    background-color: #c641ff; /* Cor da barra preenchida */
+    transition: width 0.3s ease;
+}
+#compare-btn{
+    background-color: #8d8c8c;
+    height: 50px;
+    width: 90px;
+    border-radius: 12px;
+}
+
 .footer{
     height: 10vh;
     background-color: aqua;

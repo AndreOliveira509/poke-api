@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pokeword</title>
     <link rel="stylesheet" href="style/style.css">
-    
-    <script src="script/pokedex.js"></script>    
-    <script src="script/comparador.js"></script>  
-    
+    <script src="script/script-compare.js"></script>
+    <script src="script/pokedex.js"></script>
+    <script src="/script/pokemon.js"></script> <!-- Script para a página de detalhes -->
 </head>
 <body>
     <header class="header">
@@ -17,17 +16,16 @@
         </div>
         <div class="navbar">
             <div class="home_btn"><a href="#">Home</a></div>
-            <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</div>
+            <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</a></div>
             <div class="quiz_btn"><a href="#">Quiz</a></div>
         </div>
     </header>
     <main>
         <section id="home-container">
             <h1 class="title-inicio">
-                Seja bem-vindo à nomedaempresa 
+                Seja bem-vindo à PokeAPI 
             </h1>
             <article>
-
             </article>
         </section>
         <section id="pokedex-container">
@@ -36,23 +34,27 @@
                 <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
                 <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
             </div>
-            <section class="cards">
-                <!-- Pokémon serão carregados automaticamente aqui -->
+            <section class="cards" id="cards-container">
+                <!-- Os cards de Pokémon serão adicionados dinamicamente aqui -->
             </section>
             <div>
-                <button id="pokedex-btn">Mostrar mais</button>
+                <button id="pokedex-btn" onclick="loadMorePokemon()">Mostrar mais</button>
             </div>
         </section>
-        <section id="quiz-container">
-             <h1>Quiz</h1>
-             <div id="pergunta">
-                <input type="button" value="Gerar pergunta">
-             </div>
-        </section>
+        <section id="compare-container">
+            <h1>Compare Pokémon</h1>
+            <form id="compare-form">
+                <div class="compare-inputs">
+                    <input type="text" id="pokemon1" placeholder="Digite o nome ou ID do Pokémon 1"><br><h1>x</h1><br>
+                    <input type="text" id="pokemon2" placeholder="Digite o nome ou ID do Pokémon 2">
+                    <button id="compare-btn" onclick="comparePokemons()">Comparar</button>
+                </div>
+                <div id="compare-results">
+                    <!-- Os cards de comparação serão adicionados dinamicamente aqui -->
+                </div>
+            </form>
+        </section>  
     </main>
-
-    <div class="footer">
-        
-    </div>
+    <footer class="footer"></footer>
 </body>
 </html>

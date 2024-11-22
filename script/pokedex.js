@@ -70,7 +70,7 @@ function addPokemonCard(pokemon) {
     card.classList.add('card'); // Adiciona a classe básica do card
 
     card.innerHTML = `
-        <div class="card-img">
+        <div class="card-img" onclick="redirectToDetails('${pokemon.name}')">
             <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
         </div>
         <div class="card-status">
@@ -84,6 +84,10 @@ function addPokemonCard(pokemon) {
             </div>
         </div>
     `;
+    // Redireciona para a página de detalhes ao clicar no card
+function redirectToDetails(pokemonNameOrId) {
+    window.location.href = `pokemon-details.html?pokemon=${pokemonNameOrId}`;
+}
 
     // Adiciona o card ao container
     cardsContainer.appendChild(card);
