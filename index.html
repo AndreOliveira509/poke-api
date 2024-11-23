@@ -17,7 +17,7 @@
         <div class="navbar">
             <div class="home_btn"><a href="#">Home</a></div>
             <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</div>
-            <div class="quiz_btn"><a href="#">Quiz</a></div>
+            <div class="quiz_btn"><a href="#">Comparador</a></div>
         </div>
     </header>
     <main>
@@ -32,8 +32,10 @@
         <section id="pokedex-container">
             <h1>Pokedex</h1>
             <div class="poke-search">
-                <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
-                <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
+                <div>
+                    <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
+                    <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
+                </div>
             </div>
             <section class="cards">
                 <!-- Pokémon serão carregados automaticamente aqui -->

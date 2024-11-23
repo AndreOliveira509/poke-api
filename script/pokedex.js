@@ -1,5 +1,32 @@
 let offset = 0; // Posição inicial na lista de Pokémon
-const limit = 10; // Número de Pokémon carregados por vez
+const limit = 14; // Número de Pokémon carregados por vez
+// Objeto com as cores baseadas nos tipos de Pokémon
+const typeColors = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD'
+};
+
+// Função para buscar a cor baseada no tipo do Pokémon
+function getTypeColor(types) {
+    return typeColors[types[0].type.name] || '#777'; // Cor padrão se o tipo não for encontrado
+}
+
 
 // Função para carregar uma lista de Pokémon com paginação
 async function fetchPokemonList() {
@@ -59,9 +86,14 @@ function addPokemonCard(pokemon, clearExisting = false) {
         cardsContainer.innerHTML = '';
     }
 
+    // Obtém o tipo principal do Pokémon (primeiro tipo)
+    const mainType = pokemon.types[0].type.name;
+    const bgColor = typeColors[mainType] || '#ffffff'; // Define uma cor padrão caso o tipo não esteja mapeado
+
     // Cria o elemento do card
     const card = document.createElement('div');
     card.classList.add('card');
+    card.style.backgroundColor = bgColor; // Aplica a cor baseada no tipo
 
     card.innerHTML = `
         <div class="card-img">

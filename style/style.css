@@ -74,6 +74,7 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #fff;
 
 }
 #pokedex-container h1{
@@ -88,10 +89,10 @@ main{
 }
 .poke-search{
     width: 80vw;
-    height: 8vh;
+    height: 15vh;
     display: flex;
-    align-items: center;
-    gap: 1%;
+    align-items: self-start;
+    gap: 2%;
 }
 .poke-search input{
     width: 15vw;
@@ -101,6 +102,7 @@ main{
     width: 30px;
     cursor: pointer;
 }
+
 #pokedex-container a{
     text-decoration: none;
     transition: transform 0.5s ease;
@@ -109,35 +111,37 @@ main{
     transform: scale(1.1);
 
 } 
-.cards{
-    width: 90vw;
-    height: 100vh;
+.cards {
+    width: 95%;
+    height: 95vh;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
-.cards div{
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    height: 200px;
-    border-radius: 15px;
-    background-color: #150120;
-}
-.cards img{
-    width: 120px;
-    height: 150px;
-}
-.card{
-    font-size: 1.5em;
-    color: #fff;
+
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff; /* Remova isso para usar o estilo inline */
+    border-radius: 10px;
+    width: 220px;
+    height: 340px; /* Garante altura consistente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
 }
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 150px;
+}
+
 
 .card-status{
     width: 100%;
@@ -148,9 +152,8 @@ main{
     flex-direction: column;
 }
 .card-status h2{
-    
+    font-weight: bold;
     display: flex;
-    padding-top: 50px;
     justify-content: center;
 }
 .card-atkdff{
