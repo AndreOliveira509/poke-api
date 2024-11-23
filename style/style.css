@@ -24,8 +24,9 @@ html{
     left: 50px;
 }
 .navbar{
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     flex-direction: row;
 }
 .navbar div{
@@ -126,8 +127,8 @@ main{
     align-items: center;
     background-color: #ffffff; /* Remova isso para usar o estilo inline */
     border-radius: 10px;
-    width: 220px;
-    height: 320px; /* Garante altura consistente */
+    width: 230px;
+    height: 300px; /* Garante altura consistente */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     color: #fff;
@@ -139,7 +140,7 @@ main{
 }
 
 .card img {
-    width: 150px;
+    width: 120px;
 }
 
 
@@ -161,7 +162,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 15%;
     flex-wrap: wrap;    
 }
@@ -181,7 +182,6 @@ main{
     cursor: pointer;
 
 }
-
 
 
 #compare-container {
@@ -304,4 +304,17 @@ main{
     height: 10vh;
     background-color: aqua;
     width: 100%;
+}
+.poke-filters {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.poke-filters select, .poke-filters input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }

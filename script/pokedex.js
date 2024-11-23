@@ -27,7 +27,6 @@ function getTypeColor(types) {
     return typeColors[types[0].type.name] || '#777'; // Cor padrão se o tipo não for encontrado
 }
 
-
 // Função para carregar uma lista de Pokémon com paginação
 async function fetchPokemonList() {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
@@ -149,6 +148,9 @@ document.getElementById("pokedex-btn").addEventListener("click", aumentarAltura)
     
 };
 
+
+
+
 // Função chamada ao clicar no botão
 function comparePokemons() {
     event.preventDefault();  // Previne o comportamento padrão (recarregar página)
@@ -214,13 +216,26 @@ function displayComparison(pokemon1, pokemon2) {
 
     // Função para verificar fraquezas do Pokémon baseado em seu tipo
     const getWeaknesses = (types) => {
-        const typeWeaknesses = {
-            fire: ['water', 'rock', 'ground'],
-            water: ['electric', 'grass'],
-            grass: ['fire', 'ice', 'poison', 'flying', 'bug'],
-            electric: ['ground'],
-            // Outros tipos podem ser adicionados conforme necessidade
-        };
+      const typeWeaknesses = {
+        normal: ['fighting'],
+        fire: ['water', 'rock', 'ground'],
+        water: ['electric', 'grass'],
+        grass: ['fire', 'ice', 'poison', 'flying', 'bug'],
+        electric: ['ground'],
+        ice: ['fire', 'fighting', 'rock', 'steel'],
+        fighting: ['flying', 'psychic', 'fairy'],
+        poison: ['ground', 'psychic'],
+        ground: ['water', 'grass', 'ice'],
+        flying: ['electric', 'ice', 'rock'],
+        psychic: ['bug', 'ghost', 'dark'],
+        bug: ['fire', 'flying', 'rock'],
+        rock: ['water', 'grass', 'fighting', 'ground', 'steel'],
+        ghost: ['ghost', 'dark'],
+        dragon: ['ice', 'dragon', 'fairy'],
+        dark: ['fighting', 'bug', 'fairy'],
+        steel: ['fire', 'fighting', 'ground'],
+        fairy: ['poison', 'steel']
+};
 
         const weaknesses = types.flatMap(type => typeWeaknesses[type] || []);
         return [...new Set(weaknesses)]; // Remove duplicatas
