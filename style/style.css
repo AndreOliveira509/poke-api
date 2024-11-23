@@ -127,7 +127,7 @@ main{
     background-color: #ffffff; /* Remova isso para usar o estilo inline */
     border-radius: 10px;
     width: 220px;
-    height: 340px; /* Garante altura consistente */
+    height: 320px; /* Garante altura consistente */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     color: #fff;
