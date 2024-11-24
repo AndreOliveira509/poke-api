@@ -6,7 +6,8 @@
     <title>pokeword</title>
     <link rel="stylesheet" href="style/style.css">
     
-    <script src="script/pokedex.js"></script>    
+    <script src="script/pokedex.js"></script>
+    <script src="script/simulador.js"></script>      
     
 </head>
 <body>
@@ -58,6 +59,23 @@
             <div class="res-compare">
                 <div id="compare-results"></div>
                 <div id="compare-results"></div>
+            </div>
+        </section> 
+        <section id="simulador-container">
+            <h1>Simulador Pokémon</h1>
+            <form id="simulador-form">
+                <div class="simulador-inputs">
+                    <div class="two-simulador-inputs">
+                        <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
+                        <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
+                    </div>
+                    <div class="simulador-inputs-btn">
+                        <button id="simulador-btn" type="button" onclick="simulateBattle()">Simular</button>
+                    </div>
+                </div>
+            </form>
+            <div class="res-simulador">
+                <div id="simulador-results"></div>
             </div>
         </section>        
     </main>
