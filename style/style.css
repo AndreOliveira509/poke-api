@@ -269,6 +269,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .compare-card {
@@ -280,6 +281,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: solid 5px white;
 }
 .img-compare{
     width: 100%;

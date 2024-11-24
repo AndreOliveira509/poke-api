@@ -261,7 +261,6 @@ function displayComparison(pokemon1, pokemon2) {
     // Exibe os cards de comparação no DOM
     compareResults.innerHTML = `
         ${createCard(pokemon1, stats1)}
-        <div class="vs">VS</div>
         ${createCard(pokemon2, stats2)}
 
         <div class="competing-bars">
