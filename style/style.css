@@ -220,7 +220,7 @@ main{
     width: 200px;
     padding: 0.5rem;
     font-size: 1em;
-    border-radius: 12px; 
+    border-radius: 5px; 
     border: #ffffff solid 2px;
 }
 .two-compare-inputs {
@@ -250,6 +250,11 @@ main{
     width: 10vw;
     border-radius: 12px;
     color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} 
+#compare-btn:hover {
+    background-color: #c641ff;
 }
 .res-compare{
     display: flex;
@@ -301,7 +306,7 @@ main{
 }
 #simulador-container{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -309,19 +314,19 @@ main{
 }
 /* Título */
 #simulador-container h1 {
-    font-size: 1.8em;
+    font-size: 2em;
+    text-decoration: underline;
     color: #333;
 }
 
 /* Inputs e botões */
 .simulador-inputs {
     width: 40vw;
-    height: 20vh;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;    
-    border: 1px solid #000;
+    justify-content: space-between;    
     gap: 5%;
 }
 
@@ -349,7 +354,7 @@ main{
     border: none;
     width: 10vw;
     height: 4vh;
-    background-color: #4caf50;
+    background-color: #150120;
     color: white;
     font-size: 1em;
     font-weight: bold;
@@ -359,7 +364,7 @@ main{
 }
 
 .simulador-inputs-btn button:hover {
-    background-color: #45a049;
+    background-color: #c641ff;
 }
 
 /* Resultados */
