@@ -13,18 +13,19 @@
 <body>
     <header class="header">
         <div class="logoheader">
-            <img src="logo.png" id="logoh">
+            <img src="icons/logo.png" id="logoh">
         </div>
         <div class="navbar">
             <div class="home_btn"><a href="#">Home</a></div>
             <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</div>
-            <div class="quiz_btn"><a href="#">Comparador</a></div>
+            <div class="comparador_btn"><a href="#compare-container">Comparador</a></div>
+            <div class="simulador_btn"><a href="#simulador-container">Simulador</a></div>
         </div>
     </header>
-    <main>
+    <main>  
         <section id="home-container">
             <h1 class="title-inicio">
-                Seja bem-vindo à nomedaempresa 
+                Seja bem-vindo à PokéVersus
             </h1>
             <article>
 
@@ -66,8 +67,8 @@
             <form id="simulador-form">
                 <div class="simulador-inputs">
                     <div class="two-simulador-inputs">
-                        <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
-                        <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
+                            <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
+                            <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
                     </div>
                     <div class="simulador-inputs-btn">
                         <button id="simulador-btn" type="button" onclick="simulateBattle()">Simular</button>

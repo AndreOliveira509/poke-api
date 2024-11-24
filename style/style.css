@@ -23,6 +23,10 @@ html{
     position: absolute;
     left: 50px;
 }
+.logoheader img{
+    width: 60px;
+    height: 60px;
+}
 .navbar{
     width: 90%;
     display: flex;
@@ -248,7 +252,7 @@ main{
     background-color: #150120;
     height: 5vh;
     width: 10vw;
-    border-radius: 12px;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -329,10 +333,14 @@ main{
     justify-content: space-between;    
     gap: 5%;
 }
-
 .two-simulador-inputs {
     display: flex;
+    
+}
 
+.two-simulador-inputs div{
+    display: flex;
+    flex-direction: column;
 }
 
 .two-simulador-inputs input {
@@ -421,8 +429,7 @@ main{
 }
 
 #simulador-results img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
 }
 
 #simulador-results p {
@@ -445,16 +452,6 @@ main{
     background-color: aqua;
     width: 100%;
 }
-.poke-filters {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-    justify-content: center;
-}
 
-.poke-filters select, .poke-filters input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
+
+  
