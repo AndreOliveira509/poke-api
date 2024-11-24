@@ -8,7 +8,7 @@
     
     <script src="script/pokedex.js"></script>
     <script src="script/simulador.js"></script>      
-    
+    <script src="script/poke-detail.js"></script>
 </head>
 <body>
     <header class="header">
@@ -44,6 +44,30 @@
                 <button id="pokedex-btn">Mostrar mais</button>
             </div>
         </section>
+        <section class="poke-detail-content">
+            <div class="search-container">
+                <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
+                <button id="searchButton">Buscar</button>
+            </div>
+            
+            <div class="poke-detail">
+                <div class="poke-info">
+                    <img id="pokeImage" src="" alt="Imagem do Pokémon">
+                    <h2 id="pokeName"></h2>
+                    <p id="pokeTypes"></p>
+                </div>
+        
+                <div class="poke-stats">
+                    <h3>Estatísticas</h3>
+                    <div id="pokeStats"></div>
+                </div>
+        
+                <div class="poke-attacks">
+                    <h3>Top 10 Ataques</h3>
+                    <ul id="pokeAttacks"></ul>
+                </div>
+            </div>
+        </section>
         <section id="compare-container">
             <h1>Compare Pokémon</h1>
             <form id="compare-form">
@@ -61,7 +85,7 @@
                 <div id="compare-results"></div>
                 <div id="compare-results"></div>
             </div>
-        </section> 
+        </section>
         <section id="simulador-container">
             <h1>Simulador Pokémon</h1>
             <form id="simulador-form">

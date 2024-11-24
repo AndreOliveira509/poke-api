@@ -1,6 +1,28 @@
+// Objeto com as cores baseadas nos tipos de Pokémon
+const typeColors = {
+    normal: '#A8A77A',
+    fire: '#EE8130',
+    water: '#6390F0',
+    electric: '#F7D02C',
+    grass: '#7AC74C',
+    ice: '#96D9D6',
+    fighting: '#C22E28',
+    poison: '#A33EA1',
+    ground: '#E2BF65',
+    flying: '#A98FF3',
+    psychic: '#F95587',
+    bug: '#A6B91A',
+    rock: '#B6A136',
+    ghost: '#735797',
+    dragon: '#6F35FC',
+    dark: '#705746',
+    steel: '#B7B7CE',
+    fairy: '#D685AD'
+};
+
 // Função para buscar Pokémon pelo nome ou ID
 async function fetchPokemon() {
-    const pokemonInput = document.getElementById('pokemonSearchInput').value.toLowerCase();
+    const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
     
     try {
@@ -26,15 +48,15 @@ function displayPokemonDetails(pokemon) {
     // Exibindo informações básicas
     pokeImage.src = pokemon.sprites.front_default;
     pokeName.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    pokeTypes.textContent = `Tipo(s): ${pokemon.types.map(type => type.type.name).join(', ')}`;
+    pokeTypes.textContent = `Tipo: ${pokemon.types.map(type => type.type.name).join(', ')}`;
 
-    // Exibindo estatísticas com gráficos de barras
+    // Exibindo estatísticas
     const statsHtml = pokemon.stats.map(stat => {
         return `
             <div>
                 <span>${stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}:</span>
                 <div class="compare-bar-container">
-                    <div class="compare-bar" style="width: ${(stat.base_stat / 200) * 100}%; background-color: ${getStatColor(stat.stat.name)};"></div>
+                    <div class="compare-bar" style="width: ${(stat.base_stat / 200) * 100}%; background-color: ${typeColors[pokemon.types[0].type.name] || '#777'};"></div>
                 </div>
             </div>
         `;
@@ -47,24 +69,11 @@ function displayPokemonDetails(pokemon) {
     pokeAttacks.innerHTML = attacksHtml;
 }
 
-// Função para determinar a cor da barra de estatísticas
-function getStatColor(statName) {
-    const colors = {
-        hp: '#FF0000',
-        attack: '#FF9900',
-        defense: '#339900',
-        'special-attack': '#9933FF',
-        'special-defense': '#FF33FF',
-        speed: '#0099FF'
-    };
-    return colors[statName] || '#777'; // Cor padrão
-}
-
 // Adiciona o evento ao botão de busca
 document.getElementById('searchButton').addEventListener('click', fetchPokemon);
 
 // Também adiciona o evento de pressionar "Enter" no campo de pesquisa
-document.getElementById('pokemonSearchInput').addEventListener('keypress', (e) => {
+document.getElementById('pokemonInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         fetchPokemon();
     }
