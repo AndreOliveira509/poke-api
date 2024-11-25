@@ -1,123 +1,123 @@
-let offset = 0; // Posição inicial na lista de Pokémon
-const limit = 14; // Número de Pokémon carregados por vez
-// Objeto com as cores baseadas nos tipos de Pokémon
-const typeColors = {
-    normal: '#A8A77A',
-    fire: '#EE8130',
-    water: '#6390F0',
-    electric: '#F7D02C',
-    grass: '#7AC74C',
-    ice: '#96D9D6',
-    fighting: '#C22E28',
-    poison: '#A33EA1',
-    ground: '#E2BF65',
-    flying: '#A98FF3',
-    psychic: '#F95587',
-    bug: '#A6B91A',
-    rock: '#B6A136',
-    ghost: '#735797',
-    dragon: '#6F35FC',
-    dark: '#705746',
-    steel: '#B7B7CE',
-    fairy: '#D685AD'
-};
+    let offset = 0; // Posição inicial na lista de Pokémon
+    const limit = 14; // Número de Pokémon carregados por vez
+    // Objeto com as cores baseadas nos tipos de Pokémon
+    const typeColors = {
+        normal: '#A8A77A',
+        fire: '#EE8130',
+        water: '#6390F0',
+        electric: '#F7D02C',
+        grass: '#7AC74C',
+        ice: '#96D9D6',
+        fighting: '#C22E28',
+        poison: '#A33EA1',
+        ground: '#E2BF65',
+        flying: '#A98FF3',
+        psychic: '#F95587',
+        bug: '#A6B91A',
+        rock: '#B6A136',
+        ghost: '#735797',
+        dragon: '#6F35FC',
+        dark: '#705746',
+        steel: '#B7B7CE',
+        fairy: '#D685AD'
+    };
 
-// Função para buscar a cor baseada no tipo do Pokémon
-function getTypeColor(types) {
-    return typeColors[types[0].type.name] || '#777'; // Cor padrão se o tipo não for encontrado
-}
-
-// Função para carregar uma lista de Pokémon com paginação
-async function fetchPokemonList() {
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Erro ao carregar a lista de Pokémon.');
-        }
-        const data = await response.json();
-        displayPokemonList(data.results); // Exibe os Pokémon na tela
-        offset += limit; // Atualiza o offset para o próximo lote
-    } catch (error) {
-        displayError(error.message);
+    // Função para buscar a cor baseada no tipo do Pokémon
+    function getTypeColor(types) {
+        return typeColors[types[0].type.name] || '#777'; // Cor padrão se o tipo não for encontrado
     }
-}
 
-// Função para exibir os Pokémon carregados
-async function displayPokemonList(pokemonList) {
-    const cardsContainer = document.querySelector('.cards');
-
-    // Carrega os detalhes de cada Pokémon individualmente
-    for (const pokemon of pokemonList) {
+    // Função para carregar uma lista de Pokémon com paginação
+    async function fetchPokemonList() {
+        const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
         try {
-            const response = await fetch(pokemon.url);
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Erro ao carregar a lista de Pokémon.');
+            }
             const data = await response.json();
-            addPokemonCard(data); // Adiciona o Pokémon ao container
+            displayPokemonList(data.results); // Exibe os Pokémon na tela
+            offset += limit; // Atualiza o offset para o próximo lote
         } catch (error) {
-            console.error('Erro ao carregar Pokémon:', error);
+            displayError(error.message);
         }
     }
-}
 
-// Função para buscar um Pokémon específico
-async function fetchPokemon() {
-    const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
+    // Função para exibir os Pokémon carregados
+    async function displayPokemonList(pokemonList) {
+        const cardsContainer = document.querySelector('.cards');
 
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Pokémon não encontrado.');
+        // Carrega os detalhes de cada Pokémon individualmente
+        for (const pokemon of pokemonList) {
+            try {
+                const response = await fetch(pokemon.url);
+                const data = await response.json();
+                addPokemonCard(data); // Adiciona o Pokémon ao container
+            } catch (error) {
+                console.error('Erro ao carregar Pokémon:', error);
+            }
         }
-        const pokemon = await response.json();
-        addPokemonCard(pokemon, true); // Apaga os Pokémon anteriores e exibe o buscado
-    } catch (error) {
-        displayError(error.message);
-    }
-}
-
-// Função para adicionar um card de Pokémon
-function addPokemonCard(pokemon, clearExisting = false) {
-    const cardsContainer = document.querySelector('.cards');
-
-    // Limpa os cartões antigos apenas se for uma pesquisa
-    if (clearExisting) {
-        cardsContainer.innerHTML = '';
     }
 
-    // Obtém o tipo principal do Pokémon (primeiro tipo)
-    const mainType = pokemon.types[0].type.name;
-    const bgColor = typeColors[mainType] || '#ffffff'; // Define uma cor padrão caso o tipo não esteja mapeado
+    // Função para buscar um Pokémon específico
+    async function fetchPokemon() {
+        const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
 
-    // Cria o elemento do card
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.style.backgroundColor = bgColor; // Aplica a cor baseada no tipo
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Pokémon não encontrado.');
+            }
+            const pokemon = await response.json();
+            addPokemonCard(pokemon, true); // Apaga os Pokémon anteriores e exibe o buscado
+        } catch (error) {
+            displayError(error.message);
+        }
+    }
 
-    card.innerHTML = `
-        <div class="card-img">
-            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
-        </div>
-        <div class="card-status">
-            <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-            <p>Tipo: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
-            <div class="card-atkdff">
-                <p>Ataque: ${pokemon.stats[1].base_stat}</p>
-                <p>Defesa: ${pokemon.stats[2].base_stat}</p>
-                <p>HP: ${pokemon.stats[0].base_stat}</p>
-                <p>Velocidade: ${pokemon.stats[5].base_stat}</p>
+    // Função para adicionar um card de Pokémon
+    function addPokemonCard(pokemon, clearExisting = false) {
+        const cardsContainer = document.querySelector('.cards');
+
+        // Limpa os cartões antigos apenas se for uma pesquisa
+        if (clearExisting) {
+            cardsContainer.innerHTML = '';
+        }
+
+        // Obtém o tipo principal do Pokémon (primeiro tipo)
+        const mainType = pokemon.types[0].type.name;
+        const bgColor = typeColors[mainType] || '#ffffff'; // Define uma cor padrão caso o tipo não esteja mapeado
+
+        // Cria o elemento do card
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.style.backgroundColor = bgColor; // Aplica a cor baseada no tipo
+
+        card.innerHTML = `
+            <div class="card-img">
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
             </div>
-        </div>
-    `;
+            <div class="card-status">
+                <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+                <p>Tipo: ${pokemon.types.map(type => type.type.name).join(', ')}</p>
+                <div class="card-atkdff">
+                    <p>Ataque: ${pokemon.stats[1].base_stat}</p>
+                    <p>Defesa: ${pokemon.stats[2].base_stat}</p>
+                    <p>HP: ${pokemon.stats[0].base_stat}</p>
+                    <p>Velocidade: ${pokemon.stats[5].base_stat}</p>
+                </div>
+            </div>
+        `;
 
-    cardsContainer.appendChild(card);
-}
+        cardsContainer.appendChild(card);
+    }
 
-// Função para exibir mensagens de erro
-function displayError(message) {
-    const cardsContainer = document.querySelector('.cards');
-    cardsContainer.innerHTML = `<p style="color: red;">${message}</p>`;
-}
+    // Função para exibir mensagens de erro
+    function displayError(message) {
+        const cardsContainer = document.querySelector('.cards');
+        cardsContainer.innerHTML = `<p style="color: red;">${message}</p>`;
+    }
 
 // Carrega a lista inicial de Pokémon ao carregar a página
 window.onload = () => {

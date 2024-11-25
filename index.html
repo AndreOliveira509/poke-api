@@ -36,10 +36,29 @@
             <div class="poke-search">
                 <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
                 <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
+                <div>
+                    <label for="typeFilter">Filtrar por tipo:</label>
+                    <select id="typeFilter">
+                        <option value="">Escolha um tipo</option>
+                        <option value="fire">Fogo</option>
+                        <option value="poison">Veneno</option>
+                        <option value="water">Água</option>
+                        <option value="electric">Elétrico</option>
+                        <option value="grass">Planta</option>
+                        <option value="ice">Gelo</option>
+                        <option value="fighting">Luta</option>
+                        <option value="bug">Inseto</option>
+                        <option value="dragon">Dragão</option>
+                        <option value="ghost">Fantasma</option>
+                        <option value="fairy">Fada</option>
+                        <!-- Outros tipos podem ser adicionados aqui -->
+                    </select>
+                </div>                
             </div>
             <section class="cards">
                 <!-- Pokémon serão carregados automaticamente aqui -->
             </section>
+            <div id="loading" style="display: none;">Carregando...</div>
             <div>
                 <button id="pokedex-btn">Mostrar mais</button>
             </div>
