@@ -23,9 +23,14 @@ html{
     position: absolute;
     left: 50px;
 }
+.logoheader img{
+    width: 60px;
+    height: 60px;
+}
 .navbar{
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     flex-direction: row;
 }
 .navbar div{
@@ -70,11 +75,11 @@ main{
 #pokedex-container{
     width: 100%;
     height: 110vh;
-    background-color: #dc8bff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #fff;
 
 }
 #pokedex-container h1{
@@ -90,10 +95,10 @@ main{
 
 .poke-search{
     width: 80vw;
-    height: 8vh;
+    height: 15vh;
     display: flex;
-    align-items: center;
-    gap: 1%;
+    align-items: self-start;
+    gap: 2%;
 }
 .poke-search input{
     width: 15vw;
@@ -102,19 +107,26 @@ main{
 .poke-search-lupa{
     width: 40px;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+}
+
+#pokedex-container a{
+    text-decoration: none;
+>>>>>>> origin/card-pokemon-detail
     transition: transform 0.5s ease;
 }
 .poke-search-lupa:hover{
     transform: scale(1.4);
 } 
-.cards{
-    width: 90vw;
-    height: 100vh;
+.cards {
+    width: 95%;
+    height: 95vh;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
+<<<<<<< HEAD
 .cards div{
     display: flex;
     justify-content: center;
@@ -137,6 +149,23 @@ main{
     align-items: start;    
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
+=======
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff; /* Remova isso para usar o estilo inline */
+    border-radius: 10px;
+    width: 230px;
+    height: 300px; /* Garante altura consistente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+    transform: translateY(20px);
+    transition: opacity 0.4s, transform 0.4s;
+>>>>>>> origin/card-pokemon-detail
 }
 .card.visible {
     opacity: 1;
@@ -144,6 +173,16 @@ main{
 }
 .card:hover {
     transform: scale(1.1);
+}
+
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 120px;
 }
 
 
@@ -156,9 +195,8 @@ main{
     flex-direction: column;
 }
 .card-status h2{
-    
+    font-weight: bold;
     display: flex;
-    padding-top: 50px;
     justify-content: center;
 }
 .card-atkdff{
@@ -166,16 +204,25 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 15%;
     flex-wrap: wrap;    
 }
-
+#loading {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #000;
+    z-index: 1000;
+}
 #pokedex-btn{
     border: none;
     width: 20vw;
-    height: 5vh;
+    height: 10vh;
     text-decoration: underline;
+    font-weight: bold;
     color: #150120;
     background: none;
     font-size: 1.8em;
@@ -185,23 +232,340 @@ main{
     cursor: pointer;
     margin-bottom: 20px;       
 }
-
-
-
-#quiz-container{
-    width: 100%;
+/* --------------------------------------------------------------------------------------------*/
+.poke-detail-content{
     height: 100vh;
+    width: 100vw;
+    background-color: #292929;
+    
+}.search-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .search-container input {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+    }
+    
+    .search-container button {
+        padding: 10px;
+        background-color: #6390F0;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .search-container button:hover {
+        background-color: #4a6fb1;
+    }
+    
+    .poke-detail {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 350px;
+        text-align: center;
+    }
+    
+    .poke-info img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .poke-stats,
+    .poke-attacks {
+        margin-top: 20px;
+    }
+    
+    .poke-stats div,
+    .poke-attacks li {
+        margin-bottom: 10px;
+    }
+    
+    .compare-bar-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+    
+    .compare-bar {
+        height: 12px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    
+    #pokeStats {
+        margin-top: 20px;
+    }
+
+/* --------------------------------------------------------------------------------------------*/
+
+#compare-container {
+    width: 100%;
+    height: 90vh;
+    background-color: #f8f9fa;
+    text-align: center;
 }
-#quiz-container h1{
-    height: 10vh;
-    align-items: end;
+
+#compare-container h1 {
+    text-decoration: underline;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 10vh;
+    font-size: 2em;
+    color: #150120;
+}
+
+#compare-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+
+.compare-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 15vh;
+    gap: 4%;
+}
+
+.compare-inputs input {
+    width: 200px;
+    padding: 0.5rem;
+    font-size: 1em;
+    border-radius: 5px; 
+    border: #ffffff solid 2px;
+}
+.two-compare-inputs {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.vs {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #150120;
+}
+.compare-inputs-bnt{
+    width: 100vw;
+    justify-content: center;
+
+}
+#compare-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #150120;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} 
+#compare-btn:hover {
+    background-color: #c641ff;
+}
+.res-compare{
+    display: flex;
+    justify-content: center;
+
+}
+#compare-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare-card {
+    background-color: #150120;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.img-compare{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-compare img {
+    width: 200px;
+    height: 200px;
+}
+
+.compare-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    background-color: #ddd; /* Background para barras não preenchidas */
+    overflow: hidden;
+}
+
+.compare-bar div {
+    height: 100%;
+    background-color: #c641ff; /* Cor da barra preenchida */
+    transition: width 0.3s ease;
+}
+#simulador-container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+/* Título */
+#simulador-container h1 {
+    font-size: 2em;
     text-decoration: underline;
-    font-size: 2em ;
+    color: #333;
+}
+
+/* Inputs e botões */
+.simulador-inputs {
+    width: 40vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;    
+    gap: 5%;
+}
+.two-simulador-inputs {
+    display: flex;
+    
+}
+
+.two-simulador-inputs div{
+    display: flex;
+    flex-direction: column;
+}
+
+.two-simulador-inputs input {
+    flex: 1;
+    width: 13vw;
+    height: 4vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+#simuladorpokemon1{
+    margin-right: 50px;
+}
+
+.simulador-inputs-btn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 10vw;
+    height: 4vh;
+    background-color: #150120;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.simulador-inputs-btn button:hover {
+    background-color: #c641ff;
+}
+
+/* Resultados */
+.res-simulador {
+    color: #fff;
+}
+
+#simulador-results {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 10px;
+    gap: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Layout dos Pokémon escolhidos */
+#simulador-results div{
+    display: flex;
+    justify-content: space-around;
+}
+.simulador-pokemon{
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+}
+.simulador-pokemon div{
+    width: 20vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    background-color: #150120;
+    border-radius: 10px;
+}
+.relatorio-simulador{
+    background-color: #150120;
+    border-radius: 10px;
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+
+}
+#simulador-results h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#simulador-results img {
+    width: 150px;
+}
+
+#simulador-results p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+}
+
+/* Vencedor */
+#simulador-results h4 {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
 }
 .footer{
     height: 10vh;
     background-color: aqua;
     width: 100%;
 }
+
+
+  
