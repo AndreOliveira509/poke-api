@@ -53,7 +53,10 @@
         <section class="poke-detail-content">
             <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
             <div class="search-container">
-                <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+                <div>
+                    <label for="pokemonSearchInput">Pesquisar Pokémon:</label>
+                    <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+                </div>                
                 <!-- Div clicável para buscar os dados -->
                 <div id="pokemonSearchButton" class="search-button">Buscar</div>
             </div>
@@ -105,8 +108,14 @@
             <form id="simulador-form">
                 <div class="simulador-inputs">
                     <div class="two-simulador-inputs">
+                        <div>
+                            <label for="simuladorpokemon1">Pokémon 1:</label>
                             <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
+                        </div>
+                        <div>
+                            <label for="simuladorpokemon2">Pokémon 2:</label>
                             <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
+                        </div>                        
                     </div>
                     <div class="simulador-inputs-btn">
                         <button id="simulador-btn" type="button" onclick="simulateBattle()">Simular</button>
@@ -119,7 +128,9 @@
         </section>        
     </main>
 
-    <div class="footer"></div>
+    <div class="footer">
+
+    </div>
     <script src="script/info-pokemon.js"></script>
 </body>
 </html>

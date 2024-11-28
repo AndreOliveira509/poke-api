@@ -225,6 +225,18 @@ main{
     gap: 10px;
     margin-bottom: 20px;
 }
+.search-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.search-container div label{
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;  
+}
 
 #pokemonSearchInput {
     padding: 10px;
@@ -235,7 +247,6 @@ main{
     background-color: #2a1438; /* Fundo suave */
     color: #f5e5ff; /* Texto contrastante */
 }
-
 #pokemonSearchButton {
     padding: 10px 20px;
     background-color: #4a264f; /* Combina com #150120 */
@@ -573,6 +584,18 @@ main{
     width: 300px;
     background-color: #2a1438; /* Fundo suave */
     color: #f5e5ff; /* Texto contrastante */
+}
+.two-simulador-inputs div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    margin-bottom: 50px;
+}
+.two-simulador-inputs div label{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1.3em;  
 }
 #simuladorpokemon1{
     margin-right: 50px;
