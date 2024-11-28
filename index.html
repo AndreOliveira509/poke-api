@@ -46,6 +46,7 @@
             </div>
         </section>
         <section class="poke-detail-content">
+            <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
             <div class="search-container">
                 <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
                 <!-- Div clicável para buscar os dados -->
@@ -75,8 +76,14 @@
             <form id="compare-form">
                 <div class="compare-inputs">
                         <div class="two-compare-inputs">
-                            <input type="text" id="pokemon1" placeholder="Nome ou ID do Pokémon 1">
-                            <input type="text" id="pokemon2" placeholder="Nome ou ID do Pokémon 2">
+                            <div>
+                                <label for="pokemon1">Pokémon 1:</label>
+                                <input type="text" id="pokemon1" placeholder="Nome ou ID do Pokémon 1">
+                            </div>
+                            <div>
+                                <label for="pokemon2">Pokémon 2:</label>
+                                <input type="text" id="pokemon2" placeholder="Nome ou ID do Pokémon 2">
+                            </div>                            
                         </div>
                         <div class="compare-inputs-btn">
                             <button id="compare-btn" onclick="comparePokemons()">Comparar</button>

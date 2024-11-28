@@ -49,10 +49,10 @@ function displayPokemonData(data) {
     // Atualiza as estatísticas do Pokémon
     const pokemonStats = document.getElementById('pokemonStats');
     pokemonStats.innerHTML = `
-        <p>HP: ${data.stats[0].base_stat}</p>
-        <p>Attack: ${data.stats[1].base_stat}</p>
-        <p>Defense: ${data.stats[2].base_stat}</p>
-        <p>Speed: ${data.stats[5].base_stat}</p>
+        <div><span>❤</span> HP: ${data.stats[0].base_stat}</div>
+        <div><span>🗡️</span> Ataque: ${data.stats[1].base_stat}</div>
+        <div><span>🛡️</span> Defesa: ${data.stats[2].base_stat}</div>
+        <div><span>💨</span> Velocidade: ${data.stats[5].base_stat}</div>
     `;
 
     // Atualiza os 10 primeiros ataques do Pokémon
