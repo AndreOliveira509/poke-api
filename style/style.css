@@ -17,15 +17,13 @@ html{
 }
 .header img{
     height: 90px;
-    padding-left: 10px;
 }
 .logoheader{
     position: absolute;
     left: 50px;
 }
 .logoheader img{
-    width: 60px;
-    height: 60px;
+    width: 90px;
 }
 .navbar{
     width: 90%;
@@ -199,7 +197,7 @@ main{
 /* --------------------------------------------------------------------------------------------*/
 .poke-detail-content{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: #292929;
     
 }.search-container {
