@@ -43,43 +43,6 @@
         }
     }
 
-<<<<<<< HEAD
-    // Função para buscar um Pokémon específico
-    async function fetchPokemon() {
-        const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
-        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
-    
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('Pokémon não encontrado.');
-            }
-            const pokemon = await response.json();
-    
-            // Limpa os cards existentes antes de exibir o Pokémon pesquisado
-            const cardsContainer = document.querySelector('.cards');
-            cardsContainer.innerHTML = '';
-    
-            // Redefine o tamanho do fundo ao valor original
-            const fundosize = document.getElementById("pokedex-container");
-            fundosize.style.height = '100vh';  // Ou defina o valor original que você quer (ex: '100vh')
-    
-            addPokemonCard(pokemon); // Exibe o Pokémon pesquisado
-        } catch (error) {
-            displayError(error.message);
-        }
-    }
-
-
-// Função para adicionar um card de Pokémon
-// Função para adicionar um card de Pokémon
-function addPokemonCard(pokemon) {
-    const cardsContainer = document.querySelector('.cards');
-
-    // Cria a nova div para o Pokémon
-    const card = document.createElement('div');
-    card.classList.add('card'); // Adiciona a classe básica do card
-=======
     // Função para exibir os Pokémon carregados
     async function displayPokemonList(pokemonList) {
         const cardsContainer = document.querySelector('.cards');
@@ -100,7 +63,6 @@ function addPokemonCard(pokemon) {
     async function fetchPokemon() {
         const pokemonInput = document.getElementById('pokemonInput').value.toLowerCase();
         const url = `https://pokeapi.co/api/v2/pokemon/${pokemonInput}`;
->>>>>>> origin/card-pokemon-detail
 
         try {
             const response = await fetch(url);
@@ -148,23 +110,6 @@ function addPokemonCard(pokemon) {
             </div>
         `;
 
-<<<<<<< HEAD
-    // Adiciona o card ao container
-    cardsContainer.appendChild(card);
-
-    // Adiciona a classe "visible" após um pequeno atraso para ativar a animação
-    setTimeout(() => {
-        card.classList.add('visible');
-    }, 100); // Delay em milissegundos para ativar a transição
-}
-
-
-// Função para exibir mensagens de erro
-function displayError(message) {
-    const cardsContainer = document.querySelector('.cards');
-    cardsContainer.innerHTML = `<p style="color: red;">${message}</p>`;
-}
-=======
         cardsContainer.appendChild(card);
     }
 
@@ -173,7 +118,6 @@ function displayError(message) {
         const cardsContainer = document.querySelector('.cards');
         cardsContainer.innerHTML = `<p style="color: red;">${message}</p>`;
     }
->>>>>>> origin/card-pokemon-detail
 
 // Carrega a lista inicial de Pokémon ao carregar a página
 window.onload = () => {

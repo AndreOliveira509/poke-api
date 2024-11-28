@@ -6,13 +6,8 @@
     <title>pokeword</title>
     <link rel="stylesheet" href="style/style.css">
     
-<<<<<<< HEAD
-    <script src="script/pokedex.js"></script>    
-    <script src="script/comparador.js"></script>  
-=======
     <script src="script/pokedex.js"></script>
     <script src="script/simulador.js"></script>      
->>>>>>> origin/card-pokemon-detail
     
 </head>
 <body>
@@ -41,24 +36,6 @@
             <div class="poke-search">
                 <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
                 <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
-                <div>
-                    <label for="typeFilter">Filtrar por tipo:</label>
-                    <select id="typeFilter">
-                        <option value="">Escolha um tipo</option>
-                        <option value="fire">Fogo</option>
-                        <option value="poison">Veneno</option>
-                        <option value="water">Água</option>
-                        <option value="electric">Elétrico</option>
-                        <option value="grass">Planta</option>
-                        <option value="ice">Gelo</option>
-                        <option value="fighting">Luta</option>
-                        <option value="bug">Inseto</option>
-                        <option value="dragon">Dragão</option>
-                        <option value="ghost">Fantasma</option>
-                        <option value="fairy">Fada</option>
-                        <!-- Outros tipos podem ser adicionados aqui -->
-                    </select>
-                </div>                
             </div>
             <section class="cards">
                 <!-- Pokémon serão carregados automaticamente aqui -->
@@ -70,25 +47,26 @@
         </section>
         <section class="poke-detail-content">
             <div class="search-container">
-                <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
-                <button id="searchButton">Buscar</button>
+                <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+                <!-- Div clicável para buscar os dados -->
+                <div id="pokemonSearchButton" class="search-button">Buscar</div>
             </div>
             
             <div class="poke-detail">
                 <div class="poke-info">
-                    <img id="pokeImage" src="" alt="Imagem do Pokémon">
-                    <h2 id="pokeName"></h2>
-                    <p id="pokeTypes"></p>
+                    <img id="pokemonImage" src="" alt="Imagem do Pokémon">
+                    <h2 id="pokemonName"></h2>
+                    <p id="pokemonTypes"></p>
                 </div>
         
                 <div class="poke-stats">
                     <h3>Estatísticas</h3>
-                    <div id="pokeStats"></div>
+                    <div id="pokemonStats"></div>
                 </div>
         
                 <div class="poke-attacks">
                     <h3>Top 10 Ataques</h3>
-                    <ul id="pokeAttacks"></ul>
+                    <ul id="pokemonAttacks"></ul>
                 </div>
             </div>
         </section>
@@ -129,8 +107,7 @@
         </section>        
     </main>
 
-    <div class="footer">
-        
-    </div>
+    <div class="footer"></div>
+    <script src="script/info-pokemon.js"></script>
 </body>
 </html>
