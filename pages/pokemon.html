@@ -7,30 +7,34 @@
     <link rel="stylesheet" href="../style/pokemon.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logoheader">
-            <img src="logo.png" id="logoh">
+    <section class="poke-detail-content">
+        <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
+        <div class="search-container">
+            <div>
+                <label for="pokemonSearchInput">Pesquisar Pokémon:</label>
+                <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+            </div>                
+            <!-- Div clicável para buscar os dados -->
+            <div id="pokemonSearchButton" class="search-button">Buscar</div>
         </div>
-        <div class="navbar">
-            <div class="home_btn"><a href="#../index.html#">Home</a></div>
-            <div class="pokedex_btn"><a href="../index.html#pokedex-container">Pokedex</div>
-            <div class="quiz_btn"><a href="../index.html#quiz-container">Quiz</a></div>
+        
+        <div class="poke-detail">
+            <div class="poke-info">
+                <img id="pokemonImage" src="" alt="" />
+                <h2 id="pokemonName"></h2>
+                <p id="pokemonTypes"></p>
+            </div>
+    
+            <div class="poke-stats">
+                <h3>Estatísticas</h3>
+                <div id="pokemonStats"></div>
+            </div>
+            <div class="poke-attacks">
+                <h3></h3>
+                <ul id="pokemonAttacks"></ul>
+            </div>
         </div>
-    </header>
-    <main>
-        <section id="poke-container">
-            <div class="poke-imgside">
-                <img src="../img/pokemodelo.png">
-                
-            </div>
-            <div class="poke-statusside">
-                <h2>Pikachu</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque et quis, fugiat illum, impedit nesciunt, ea vel accusamus odit quae sed quidem quod officia! Impedit excepturi aliquam eveniet voluptatum doloremque!</p>
-                <h2>Evolução</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nemo perspiciatis voluptas. Aperiam maxime culpa laboriosam harum, natus iusto reprehenderit dolorum magni, voluptatem cupiditate nam quidem nulla voluptates fugiat placeat.</p>
-            </div>
-
-        </section>
-    </main>
+    </section>
+    <script src="/script/info-pokemon.js"></script>
 </body>
 </html>

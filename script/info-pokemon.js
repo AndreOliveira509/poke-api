@@ -1,5 +1,5 @@
- // Adiciona o evento de clique na div de busca
- document.getElementById('pokemonSearchButton').addEventListener('click', function() {
+// Adiciona o evento de clique na div de busca
+document.getElementById('pokemonSearchButton').addEventListener('click', function() {
     const pokemonSearchInput = document.getElementById('pokemonSearchInput').value.trim().toLowerCase();
 
     // Verifica se o campo de entrada está vazio
@@ -24,6 +24,7 @@ function fetchPokemonData(query) {
         })
         .then(data => {
             displayPokemonData(data);  // Exibe os dados do Pokémon
+            fetchEvolutionChain(data.species.url);  // Chama a função para buscar a cadeia de evolução
         })
         .catch(error => {
             displayError(error.message);  // Exibe erro caso não encontre o Pokémon
@@ -74,6 +75,67 @@ function clearPokemonData() {
     document.getElementById('pokemonTypes').textContent = '';
     document.getElementById('pokemonStats').innerHTML = '';
     document.getElementById('pokemonAttacks').innerHTML = '';
+    document.getElementById('pokemonEvolutions').innerHTML = ''; // Limpa as evoluções
+}
+
+// Função para buscar a cadeia de evolução
+function fetchEvolutionChain(speciesUrl) {
+    fetch(speciesUrl)
+        .then(response => response.json())
+        .then(data => {
+            const evolutionChainUrl = data.evolution_chain.url;
+            return fetch(evolutionChainUrl);
+        })
+        .then(response => response.json())
+        .then(data => {
+            displayEvolutions(data.chain);
+        })
+        .catch(error => {
+            console.error('Erro ao buscar cadeia de evolução:', error);
+        });
+}
+
+// Função para exibir as evoluções
+function displayEvolutions(chain) {
+    const evolutionContainer = document.getElementById('pokemonEvolutions');
+    evolutionContainer.innerHTML = '';  // Limpa as evoluções anteriores
+
+    let currentPokemon = chain;
+    const evolutions = [];
+
+    // Pega as evoluções até o final da cadeia
+    while (currentPokemon) {
+        evolutions.push(currentPokemon.species.name);
+        currentPokemon = currentPokemon.evolves_to[0];
+    }
+
+    // Limita para 3 evoluções
+    evolutions.slice(0, 3).forEach(pokemonName => {
+        fetchPokemonImage(pokemonName, evolutionContainer);
+    });
+}
+
+// Função para buscar a imagem do Pokémon
+function fetchPokemonImage(pokemonName, container) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const pokemonElement = document.createElement('div');
+            pokemonElement.classList.add('evolution');
+
+            const image = document.createElement('img');
+            image.src = data.sprites.front_default;
+            image.alt = pokemonName;
+
+            const name = document.createElement('p');
+            name.textContent = capitalizeFirstLetter(pokemonName);
+
+            pokemonElement.appendChild(image);
+            pokemonElement.appendChild(name);
+            container.appendChild(pokemonElement);
+        })
+        .catch(error => console.error('Erro ao buscar imagem:', error));
 }
 
 // Função para capitalizar a primeira letra do nome do Pokémon
