@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pokeword</title>
+    <!--  LINKS  -->
     <link rel="stylesheet" href="style/style.css">
-    
-<<<<<<< HEAD
-    <script src="script/pokedex.js"></script>    
-    <script src="script/comparador.js"></script>  
-=======
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Righteous&display=swap" rel="stylesheet">    
+    <!--  Script  -->
     <script src="script/pokedex.js"></script>
-    <script src="script/simulador.js"></script>      
->>>>>>> origin/card-pokemon-detail
+    <script src="script/simulador.js"></script>
     
 </head>
 <body>
@@ -24,7 +24,7 @@
             <div class="home_btn"><a href="#">Home</a></div>
             <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</div>
             <div class="comparador_btn"><a href="#compare-container">Comparador</a></div>
-            <div class="simulador_btn"><a href="#simulador-container">Simulador</a></div>
+            <div class="simulador_btn"><a href="pages/pokemon.html">Simulador</a></div>
         </div>
     </header>
     <main>  
@@ -41,24 +41,6 @@
             <div class="poke-search">
                 <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
                 <img src="icons/lupa.png" onclick="fetchPokemon()" class="poke-search-lupa">
-                <div>
-                    <label for="typeFilter">Filtrar por tipo:</label>
-                    <select id="typeFilter">
-                        <option value="">Escolha um tipo</option>
-                        <option value="fire">Fogo</option>
-                        <option value="poison">Veneno</option>
-                        <option value="water">Água</option>
-                        <option value="electric">Elétrico</option>
-                        <option value="grass">Planta</option>
-                        <option value="ice">Gelo</option>
-                        <option value="fighting">Luta</option>
-                        <option value="bug">Inseto</option>
-                        <option value="dragon">Dragão</option>
-                        <option value="ghost">Fantasma</option>
-                        <option value="fairy">Fada</option>
-                        <!-- Outros tipos podem ser adicionados aqui -->
-                    </select>
-                </div>                
             </div>
             <section class="cards">
                 <!-- Pokémon serão carregados automaticamente aqui -->
@@ -69,36 +51,43 @@
             </div>
         </section>
         <section class="poke-detail-content">
+            <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
             <div class="search-container">
-                <input type="text" id="pokemonInput" placeholder="Digite o nome ou ID do Pokémon">
-                <button id="searchButton">Buscar</button>
+                <div>
+                    <label for="pokemonSearchInput">Pesquisar Pokémon:</label>
+                    <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+                </div>
+                <div id="pokemonSearchButton" class="search-button">Buscar</div>
             </div>
-            
             <div class="poke-detail">
                 <div class="poke-info">
-                    <img id="pokeImage" src="" alt="Imagem do Pokémon">
-                    <h2 id="pokeName"></h2>
-                    <p id="pokeTypes"></p>
+                    <img id="pokemonImage" src="" alt="Imagem do Pokémon">
+                    <h2 id="pokemonName"></h2>
+                    <p id="pokemonTypes"></p>
                 </div>
-        
                 <div class="poke-stats">
                     <h3>Estatísticas</h3>
-                    <div id="pokeStats"></div>
+                    <div id="pokemonStats"></div>
                 </div>
-        
                 <div class="poke-attacks">
                     <h3>Top 10 Ataques</h3>
-                    <ul id="pokeAttacks"></ul>
+                    <ul id="pokemonAttacks"></ul>
                 </div>
             </div>
-        </section>
+        </section>  
         <section id="compare-container">
             <h1>Compare Pokémon</h1>
             <form id="compare-form">
                 <div class="compare-inputs">
                         <div class="two-compare-inputs">
-                            <input type="text" id="pokemon1" placeholder="Nome ou ID do Pokémon 1">
-                            <input type="text" id="pokemon2" placeholder="Nome ou ID do Pokémon 2">
+                            <div>
+                                <label for="pokemon1">Pokémon 1:</label>
+                                <input type="text" id="pokemon1" placeholder="Nome ou ID do Pokémon 1">
+                            </div>
+                            <div>
+                                <label for="pokemon2">Pokémon 2:</label>
+                                <input type="text" id="pokemon2" placeholder="Nome ou ID do Pokémon 2">
+                            </div>                            
                         </div>
                         <div class="compare-inputs-btn">
                             <button id="compare-btn" onclick="comparePokemons()">Comparar</button>
@@ -110,13 +99,19 @@
                 <div id="compare-results"></div>
             </div>
         </section> 
-        <section id="simulador-container">
+        <!-- <section id="simulador-container">
             <h1>Simulador Pokémon</h1>
             <form id="simulador-form">
                 <div class="simulador-inputs">
                     <div class="two-simulador-inputs">
+                        <div>
+                            <label for="simuladorpokemon1">Pokémon 1:</label>
                             <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
+                        </div>
+                        <div>
+                            <label for="simuladorpokemon2">Pokémon 2:</label>
                             <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
+                        </div>                        
                     </div>
                     <div class="simulador-inputs-btn">
                         <button id="simulador-btn" type="button" onclick="simulateBattle()">Simular</button>
@@ -125,12 +120,20 @@
             </form>
             <div class="res-simulador">
                 <div id="simulador-results"></div>
-            </div>
+            </div> -->
         </section>        
     </main>
-
-    <div class="footer">
-        
-    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PokéVersus. Todos os direitos reservados.</p>
+            <p>Desenvolvido por [André Luis de Oliveira e Danilo da Silva Alves]</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>    
+    <script src="/script/info-pokemon.js"></script>
 </body>
 </html>

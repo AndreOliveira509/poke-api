@@ -88,7 +88,7 @@ async function simulateBattle() {
 
         // Exibe os Pokémon escolhidos e resultados
         resultsContainer.innerHTML = `
-            <div style="display: flex; justify-content: space-around;" class="simulador-pokemon">
+            <div style="display: flex; justify-content: space-around;" class="simulador-pokemon"><a href="/pages/pokemon.html">
                 <div>
                     <h3>${pokemon1.name}</h3>
                     <img src="${pokemon1.sprites.front_default}" alt="${pokemon1.name}">
@@ -105,6 +105,7 @@ async function simulateBattle() {
                 <p>${pokemon1.name}: Dano causado - ${pokemon1Damage}</p>
                 <p>${pokemon2.name}: Dano causado - ${pokemon2Damage}</p>
                 <h4>Vencedor: ${winner}</h4>
+                </a>
             </div>
         `;
     } catch (error) {
