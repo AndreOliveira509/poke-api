@@ -3,38 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pokeword</title>
+    <title>Pokeword - Simulador Pokémon</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Righteous&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="../style/pokemon.css">
+    <!-- Link para o Font Awesome (adicione na seção <head>) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    
+    <script src="../script/simulador.js" defer></script>
 </head>
 <body>
-    <section class="poke-detail-content">
-        <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
-        <div class="search-container">
-            <div>
-                <label for="pokemonSearchInput">Pesquisar Pokémon:</label>
-                <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
-            </div>                
-            <!-- Div clicável para buscar os dados -->
-            <div id="pokemonSearchButton" class="search-button">Buscar</div>
-        </div>
-        
-        <div class="poke-detail">
-            <div class="poke-info">
-                <img id="pokemonImage" src="" alt="" />
-                <h2 id="pokemonName"></h2>
-                <p id="pokemonTypes"></p>
+    <a href="/" id="voltar-btn">
+        <button type="button">Voltar à Home</button>
+    </a>    
+    <section id="simulador-container">
+        <h1>Simulador Pokémon</h1>
+        <h3>Simulador de Batalhas Pokémon</h3>
+        <form id="simulador-form">
+            <div class="simulador-inputs">
+                <div class="two-simulador-inputs">
+                    <div class="input-group">
+                        <label for="simuladorpokemon1">Pokémon 1:</label>
+                        <input type="text" id="simuladorpokemon1" placeholder="Nome ou ID do Pokémon 1">
+                    </div>
+                    <div class="input-group">
+                        <label for="simuladorpokemon2">Pokémon 2:</label>
+                        <input type="text" id="simuladorpokemon2" placeholder="Nome ou ID do Pokémon 2">
+                    </div>                        
+                </div>
+                <button id="simulador-btn" type="button" onclick="simulateBattle()">Simular</button>
             </div>
-    
-            <div class="poke-stats">
-                <h3>Estatísticas</h3>
-                <div id="pokemonStats"></div>
-            </div>
-            <div class="poke-attacks">
-                <h3></h3>
-                <ul id="pokemonAttacks"></ul>
-            </div>
-        </div>
+        </form>
+        <div id="simulador-results" class="res-simulador"></div>
     </section>
-    <script src="/script/info-pokemon.js"></script>
 </body>
 </html>

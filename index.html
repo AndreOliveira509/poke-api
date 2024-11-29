@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400..900;1,400..900&family=Righteous&display=swap" rel="stylesheet">    
     <!--  Script  -->
     <script src="script/pokedex.js"></script>
-    <script src="script/simulador.js"></script>      
+    <script src="script/simulador.js"></script>
     
 </head>
 <body>
@@ -24,7 +24,7 @@
             <div class="home_btn"><a href="#">Home</a></div>
             <div class="pokedex_btn"><a href="#pokedex-container">Pokedex</div>
             <div class="comparador_btn"><a href="#compare-container">Comparador</a></div>
-            <div class="simulador_btn"><a href="#simulador-container">Simulador</a></div>
+            <div class="simulador_btn"><a href="pages/pokemon.html">Simulador</a></div>
         </div>
     </header>
     <main>  
@@ -49,7 +49,32 @@
             <div>
                 <button id="pokedex-btn">Mostrar mais</button>
             </div>
-        </section>  
+        </section>
+        <section class="poke-detail-content">
+            <h1 class="title-poke-datail">Detalhes dos Pokémon</h1>
+            <div class="search-container">
+                <div>
+                    <label for="pokemonSearchInput">Pesquisar Pokémon:</label>
+                    <input type="text" id="pokemonSearchInput" placeholder="Digite o nome ou ID do Pokémon">
+                </div>
+                <div id="pokemonSearchButton" class="search-button">Buscar</div>
+            </div>
+            <div class="poke-detail">
+                <div class="poke-info">
+                    <img id="pokemonImage" src="" alt="Imagem do Pokémon">
+                    <h2 id="pokemonName"></h2>
+                    <p id="pokemonTypes"></p>
+                </div>
+                <div class="poke-stats">
+                    <h3>Estatísticas</h3>
+                    <div id="pokemonStats"></div>
+                </div>
+                <div class="poke-attacks">
+                    <h3>Top 10 Ataques</h3>
+                    <ul id="pokemonAttacks"></ul>
+                </div>
+            </div>
+        </section>  
         <section id="compare-container">
             <h1>Compare Pokémon</h1>
             <form id="compare-form">
@@ -74,7 +99,7 @@
                 <div id="compare-results"></div>
             </div>
         </section> 
-        <section id="simulador-container">
+        <!-- <section id="simulador-container">
             <h1>Simulador Pokémon</h1>
             <form id="simulador-form">
                 <div class="simulador-inputs">
@@ -95,12 +120,20 @@
             </form>
             <div class="res-simulador">
                 <div id="simulador-results"></div>
-            </div>
+            </div> -->
         </section>        
     </main>
-
-    <div class="footer">
-
-    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PokéVersus. Todos os direitos reservados.</p>
+            <p>Desenvolvido por [André Luis de Oliveira e Danilo da Silva Alves]</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>    
+    <script src="/script/info-pokemon.js"></script>
 </body>
 </html>

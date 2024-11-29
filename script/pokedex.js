@@ -95,7 +95,7 @@
         card.style.backgroundColor = bgColor; // Aplica a cor baseada no tipo
 
         card.innerHTML = `
-            <div class="card-img"><a href="/pages/pokemon.html">
+            <div class="card-img">
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
             </div>
             <div class="card-status">
@@ -107,10 +107,8 @@
                     <p>Defesa: ${pokemon.stats[2].base_stat}</p>
                     <p>HP: ${pokemon.stats[0].base_stat}</p>
                     <p>Velocidade: ${pokemon.stats[5].base_stat}</p>
-            </a>
                 </div>
             </div>
-        </a>
         `;
 
         cardsContainer.appendChild(card);
